@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="img/style.css" type="text/css"/>
+    <title>IOHNER Romain</title>
+</head>
+<script language="JavaScript">
+    document.addEventListener("DOMContentLoaded", () => {
+        let sreseau = document.getElementById("sreseau");
+        let sprojets = document.getElementById("sprojets");
+        let reseau = document.getElementById("reseau");
+        let projets = document.getElementById("projets");
+
+        sreseau.addEventListener("click", () => {
+            reseau.style.display = (getComputedStyle(reseau).display != "none") ? "none" : "block";
+        });
+
+        sprojets.addEventListener("click", () => {
+            projets.style.display = (getComputedStyle(projets).display != "none") ? "none" : "block";
+        });
+    });
+</script>
+<body>
+    <header>
+        <h1>Iohner Romain</h1>
+        <a target="_blank" href="http://www.lycee-chopin.fr"><img id="lienlycee" src="img/chopin.jpg"></img></a>
+        <h3>Etudiant BTS SIO</h3>
+    </header>
+    <div id="page">
+        <div id="sreseau">
+            <p id="ss" name="two">
+                -> Mes Réseaux
+            </p>
+        </div>
+        <div id="reseau">
+            <p>
+                Mes projets sont disponibles sur <a target="_blank" href="https://github.com/romain-ecole/romain-ecole">GitHub<img src="img/github.png"></a><br>
+            </p>
+            <p>
+                Mon profil professionnel <a target="_blank" href="www.linkedin.com/in/romain-iohner-b0400a327">Linkedin<img src="img/linkedin.png"></a><br>
+            </p>
+        </div>
+        <div id="sprojets">
+            <p id="sswitch" name="one">
+                -> Mes Projets
+            </p>
+        </div>
+        <div id="projets">
+            <p>
+                Projet de Site e-commerce <a target="_blank" href="/ecommerce/index.html">Meub' Ebeniste<img src="img/icone.png"></a><br>
+            </p>
+            <p>
+                Réalisé durant les deux années du BTS SIO, en cours en suivant un cahier des charge évolutif.<br>
+            </p>
+            <p>
+                Projet de Site gestion de stage <a target="_blank" href="/Challenge2/index.html"> Stage Hunt<img src="img/loupe.png"></a><br>
+            </p>
+            <p>
+                Réalisé pendant la période de challenge de la 1 ère année.<br>
+            </p>
+        </div>
+    </div>
+    <footer>
+        <h1>IOHNER Romain 2024 Tout Droits Reservés</h1>
+        <h4>V0.1</h4>
+    </footer>
+</body>
+</html>

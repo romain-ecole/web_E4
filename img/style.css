@@ -1,0 +1,99 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #1c1c1c;
+    color: white;
+    font-family: sans-serif;
+    z-index: 1;
+}
+
+img {
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+    vertical-align: middle;
+}
+
+p.a {
+    padding-top: 1px;
+    width: 25px;
+    height: 25px;
+    vertical-align: center;
+    font-family: sans-serif;
+}
+
+a:link {
+    color: #4500bc;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #6200a3;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #8a00a3;
+    text-decoration: underline;
+}
+
+header {
+    filter: drop-shadow(3px 3px 3px black);
+    background-color: #2e2e2e;
+    margin-top: -25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+#ss:hover,#sswitch:hover {
+    color: #8a00a3;
+    text-decoration: underline;
+    transition-duration: 0.4s;
+}
+
+#sreseau,#sprojets {
+    text-align: center;
+}
+
+#ss,#sswitch {
+    width: 200px;
+    display: inline-block;
+    font-size: large;
+}
+
+#projets {
+    display: none;
+}
+
+#reseau {
+    display: none;
+}
+
+#lienlycee {
+    float: left;
+    width: 150px;
+    height: 50px;
+    margin-top: -25px;
+    margin-left: -43%;
+    z-index: 2;
+    position: absolute;
+}
+
+h3 {
+    justify-content: center;
+    display: inline-flex;
+    position: relative;
+}
+
+#page {
+    background-image: url(""); <!--changer code combien -->
+}
+
+footer {
+    filter: shadow(3px 3px 3px 3px black);
+    background-color: #2e2e2e;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
