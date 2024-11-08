@@ -7,10 +7,16 @@
 </head>
 <script language="JavaScript">
     document.addEventListener("DOMContentLoaded", () => {
+        let scompetence = document.getElementById("scompetence");
         let sreseau = document.getElementById("sreseau");
         let sprojets = document.getElementById("sprojets");
+        let competence = document.getElementById("competence");
         let reseau = document.getElementById("reseau");
         let projets = document.getElementById("projets");
+
+        scompetence.addEventListener("click", () => {
+            competence.style.display = (getComputedStyle(competence).display != "none") ? "none" : "block";
+        });
 
         sreseau.addEventListener("click", () => {
             reseau.style.display = (getComputedStyle(reseau).display != "none") ? "none" : "block";
@@ -35,10 +41,10 @@
         </div>
         <div id="competence">
             <p>
-                Mon <a target="_blank" href="https://github.com/romain-ecole/romain-ecole">CV<img src="img/github.png"></a><br>
+                Mon <a target="_blank" href="https://github.com/romain-ecole/romain-ecole">CV<img src="img/pdf.png"></a><br>
             </p>
             <p>
-                Mon tableau de <a target="_blank" href="www.linkedin.com/in/romain-iohner-b0400a327">compétence et indicateurs BTS SIO<img src="img/linkedin.png"></a><br>
+                Mon tableau de <a target="_blank" href="www.linkedin.com/in/romain-iohner-b0400a327">compétence et indicateurs BTS SIO<img src="img/excel.png"></a><br>
             </p>
         </div>
         <div id="sreseau">
