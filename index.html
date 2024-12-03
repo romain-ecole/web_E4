@@ -10,9 +10,11 @@
         let scompetence = document.getElementById("scompetence");
         let sreseau = document.getElementById("sreseau");
         let sprojets = document.getElementById("sprojets");
+        let sexercices = document.getElementById("sexercices");
         let competence = document.getElementById("competence");
         let reseau = document.getElementById("reseau");
         let projets = document.getElementById("projets");
+        let exercices = document.getElementById("exercices");
 
         scompetence.addEventListener("click", () => {
             competence.style.display = (getComputedStyle(competence).display != "none") ? "none" : "block";
@@ -24,6 +26,10 @@
 
         sprojets.addEventListener("click", () => {
             projets.style.display = (getComputedStyle(projets).display != "none") ? "none" : "block";
+        });
+
+        sexercices.addEventListener("click", () => {
+            projets.style.display = (getComputedStyle(exercices).display != "none") ? "none" : "block";
         });
     });
 </script>
@@ -68,7 +74,7 @@
         </div>
         <div id="projets">
             <p>
-                Projet de Site e-commerce <a target="_blank" href="/ecommerce/index.html">Meub' Ebeniste<img src="img/icone.png"></a><br>
+                Projet de Site e-commerce <a target="_blank" href="/siteecommerce/index.html">Meub' Ebeniste<img src="img/icone.png"></a><br>
             </p>
             <p>
                 Réalisé durant les deux années du BTS SIO, en cours en suivant un cahier des charge évolutif.<br>
@@ -78,6 +84,16 @@
             </p>
             <p>
                 Réalisé pendant la période de challenge de la 1 ère année.<br>
+            </p>
+        </div>
+        <div id="sexercices">
+            <p id="sswitch">
+                -> Mes Exercices
+            </p>
+        </div>
+        <div id="exercices">
+            <p>
+                Exercice pour s'entrainer sur <a target="_blank" href="/exercices/php/index.html">php</a><br>
             </p>
         </div>
     </div>

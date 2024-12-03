@@ -73,7 +73,7 @@ header {
     height: 50px;
     margin-top: -25px;
     margin-left: -43%;
-    z-index: 2;
+    z-index: 1;
     position: absolute;
 }
 
@@ -83,7 +83,7 @@ header {
     height: 50px;
     margin-top: -25px;
     margin-left: -30%;
-    z-index: 2;
+    z-index: 1;
     position: absolute;
 }
 
