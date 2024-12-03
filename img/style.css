@@ -57,13 +57,13 @@ header {
     text-align: center;
 }
 
-#sss, #ss,#sswitch {
+#ssswitch,#sswitch {
     width: 200px;
     display: inline-block;
     font-size: large;
 }
 
-#competence,#projets,#reseau {
+#competence,#projets,#reseau,#exercices {
     display: none;
 }
 
