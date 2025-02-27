@@ -11,10 +11,10 @@
         $_SESSION['panier'] = array();
     }
 
-    /*<DEBUG>*/
+    /*<DEBUG>
     echo ("DEBUG : ");
     var_dump($_SERVER['SCRIPT_NAME']);
-    /*</DEBUG>*/
+    //</DEBUG>*/
 ?>
 <!DOCTYPE html>
 <head>

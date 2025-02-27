@@ -17,5 +17,5 @@ HTML;
 }
 ?>
 
-<?= nav_item('/index.php', 'Accueil', $class); ?>
-<?= nav_item('/contact.php', 'Contact', $class); ?>
+<?= nav_item('/webE4/exercices/php/index.php', 'Accueil',''); ?>
+<?= nav_item('/webE4/exercices/php/contact.php', 'Contact',''); ?>

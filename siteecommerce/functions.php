@@ -15,10 +15,10 @@ function GenHeader(): string
     return "<header><nav class='right-align'><h1 id='titresite' style='text-align: center'>Meub'Ebéniste</h1>".
         aItems("Inscription", "inscription").
         aItems("Contact", "contact").
-        aItems("Nos Produits", "tableauproduits").
+        aItems("Nos Produits", "tableauProduits").
         aItems("Mon Panier", "panier").
         aItems("FAQ", "faq").
-        aItems("Déconnexion", "disconnect")."</nav></header>";
+        aItems("Déconnexion", "scripts/sessionExit")."</nav></header>";
 }
 
 function GenFooter(): string
@@ -29,5 +29,5 @@ function GenFooter(): string
         aItems("Nos Produits", "tableauproduits").
         aItems("Mon Panier", "panier").
         aItems("FAQ", "faq").
-        aItems("Déconnexion", "disconnect")."</nav></footer>";
+        aItems("Déconnexion", "scripts/sessionExit")."</nav></footer>";
 }
