@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Étudiants - Stage Hunt</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <?php include 'includes/navbar.php'; ?>
+
+    <main>
+        <h2>Liste des offres de stage</h2>
+        <div class="filters">
+            <label for="search-keywords">Filtrer par compétences :</label>
+            <input type="text" id="search-keywords" placeholder="Ex : PHP, JavaScript...">
+        </div>
+        <div id="offers-list">
+            <!-- Les offres de stage seront injectées ici via PHP -->
+        </div>
+    </main>
+
+    <?php include 'includes/footer.php'; ?>
+    <script src="assets/js/scripts.js"></script>
+</body>
+</html>

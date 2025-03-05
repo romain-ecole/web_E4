@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de Bord Administrateur - Stage Hunt</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <header>
+        <h1>Tableau de Bord Administrateur</h1>
+        <nav>
+            <ul>
+                <li><a href="#users-section">Gestion des Utilisateurs</a></li>
+                <li><a href="#offers-section">Gestion des Offres de Stage</a></li>
+                <li><a href="#messages-section">Gestion des Messages</a></li>
+                <li><a href="#stats-section">Statistiques</a></li>
+                <li><a href="#settings-section">Paramètres</a></li>
+                <li><a href="logout.php">Se Déconnecter</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Section Gestion des Utilisateurs -->
+        <section id="users-section">
+            <h2>Gestion des Utilisateurs</h2>
+            <div class="admin-actions">
+                <a href="admin_view_users.php" class="admin-btn">Voir Tous les Utilisateurs</a>
+                <a href="admin_add_user.php" class="admin-btn">Ajouter un Utilisateur</a>
+                <a href="admin_modify_user.php" class="admin-btn">Modifier un Utilisateur</a>
+                <a href="admin_delete_user.php" class="admin-btn">Supprimer un Utilisateur</a>
+            </div>
+        </section>
+
+        <!-- Section Gestion des Offres de Stage -->
+        <section id="offers-section">
+            <h2>Gestion des Offres de Stage</h2>
+            <div class="admin-actions">
+                <a href="admin_view_offers.php" class="admin-btn">Voir Toutes les Offres</a>
+                <a href="admin_approve_offers.php" class="admin-btn">Approuver les Offres</a>
+                <a href="admin_modify_offer.php" class="admin-btn">Modifier une Offre</a>
+                <a href="admin_delete_offer.php" class="admin-btn">Supprimer une Offre</a>
+            </div>
+        </section>
+
+        <!-- Section Gestion des Messages -->
+        <section id="messages-section">
+            <h2>Gestion des Messages</h2>
+            <div class="admin-actions">
+                <a href="admin_view_messages.php" class="admin-btn">Voir Tous les Messages</a>
+                <a href="admin_moderate_messages.php" class="admin-btn">Modérer les Messages</a>
+            </div>
+        </section>
+
+        <!-- Section Statistiques -->
+        <section id="stats-section">
+            <h2>Statistiques</h2>
+            <div class="admin-actions">
+                <a href="admin_stats.php" class="admin-btn">Voir les Statistiques du Site</a>
+            </div>
+        </section>
+
+        <!-- Section Paramètres du Site -->
+        <section id="settings-section">
+            <h2>Paramètres du Site</h2>
+            <div class="admin-actions">
+                <a href="admin_site_settings.php" class="admin-btn">Paramètres Généraux</a>
+                <a href="admin_security_settings.php" class="admin-btn">Paramètres de Sécurité</a>
+                <a href="admin_backup.php" class="admin-btn">Sauvegarde et Restauration</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Stage Hunt. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

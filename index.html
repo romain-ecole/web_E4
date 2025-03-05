@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
+<!--<head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="img/style.css" type="text/css"/>
     <title>IOHNER Romain</title>
@@ -51,7 +49,7 @@
                 Mon <a target="_blank" href="img/CV.pdf">CV<img src="img/pdf.png"></a><br>
             </p>
             <p>
-                Mon tableau de <a target="_blank" href="">compétence et indicateurs BTS SIO<img src="img/excel.png"></a><br>
+                Mon tableau de <a target="_blank" href="img/IOHNER-Romain_Tableau-E4-Version2.xlsx">compétence et indicateurs BTS SIO<img src="img/excel.png"></a><br>
             </p>
         </div>
         <div id="sreseau">
@@ -103,6 +101,230 @@
     <footer>
         <h1>IOHNER Romain 2024 Tout Droits Reservés</h1>
         <h4>V0.3</h4>
-    </footer>
+    </footer> -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IOHNER Romain</title>
+    <script src="./utils/scripth.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {}
+            }
+        }
+    </script>
+    <link href="./utils/all.min.css" rel="stylesheet">
+    <style>
+        .theme-transition-ready {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                color-scheme: dark;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                transition: none !important;
+            }
+        }
+    </style>
+    <script>
+        // Fonction pour gérer le thème
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.classList.toggle('dark', savedTheme === 'dark');
+
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+                if (!localStorage.getItem('theme')) {
+                    document.documentElement.classList.toggle('dark', e.matches);
+                }
+            });
+        }
+
+        function toggleTheme() {
+            const isDark = document.documentElement.classList.toggle('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        }
+
+        document.addEventListener('DOMContentLoaded', initTheme);
+    </script>
+</head>
+<body class="min-h-screen bg-white dark:bg-gray-900">
+<header class="theme-transition-ready bg-white dark:bg-gray-900 shadow-md py-4 w-full" id="En-tête Centré">
+    <a target="_blank" href="http://www.lycee-chopin.fr"><img class="absolute w-[150px] inset-x-[10px] inset-y-[22px]" id="lienlycee" src="utils/img/chopin.jpg"></a>
+    <a target="_blank" href="https://asci-asso.fr/accueil-asci"><img class="absolute w-[120px] h-[70px] inset-x-[180px]" id="lienasci" src="utils/img/asci.png"></a>
+    <a target="_blank" href="https://www.sms-formation.org/moodle30"><img class="absolute w-[70px] h-[70px] inset-x-[320px] inset-y-[7px]" id="liensms" src="utils/img/sms.png"></a>
+    <div class="mx-auto px-4">
+        <div class="flex md:justify-center justify-between items-center">
+            <h1 class="text-3xl font-bold theme-transition-ready text-gray-900 dark:text-white">IOHNER Romain</h1>
+            <button id="centered-menu-button" onclick="this.querySelector('.menu-open').classList.toggle('hidden'); this.querySelector('.menu-close').classList.toggle('hidden'); document.getElementById('centered-mobile-menu').classList.toggle('hidden');" class="md:hidden theme-transition-ready text-gray-600 dark:text-gray-300 hover:text-blue-500">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path class="menu-open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    <path class="menu-close hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+        <nav class="hidden md:flex justify-center mt-4 space-x-8">
+            <a target="_blank" href="utils/documents/CV.pdf" class="theme-transition-ready text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 cursor-pointer rounded">Mon CV</a>
+            <a href="#" class="theme-transition-ready text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 cursor-pointer rounded">Compétences</a>
+            <a href="#Projets" class="theme-transition-ready text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 cursor-pointer rounded">Projets</a>
+            <a href="#Exercices" class="theme-transition-ready text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 cursor-pointer rounded">Exercices</a>
+            <a href="#Certifications" class="theme-transition-ready text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 cursor-pointer rounded">Certifications</a>
+        </nav>
+    </div>
+</header>
+<section class="theme-transition-ready bg-white dark:bg-gray-900 py-12" id="À propos Simple">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-[25px] font-bold theme-transition-ready text-gray-800 dark:text-white mb-4">À Propos de moi</h2>
+            <p class="text-lg theme-transition-ready text-gray-600 dark:text-gray-300">Bienvenue sur mon site personnel crée pour l'épreuve E5, vous y retrouverez mes projets, exercices, certifications, le code d'une partie de mes projet est disponible sur Github, retrouvez également mon profil sur Linkedin</p>
+        </div>
+    </div>
+</section>
+<div class="flex flex-wrap justify-center gap-4" id="Boutons de Partage">
+    <a target="_blank" href="https://github.com/romain-ecole">
+        <button class="theme-transition-ready flex items-center gap-2 px-4 py-2 bg-white hover:bg-gray-100 text-black rounded-lg cursor-pointer rounded">
+            <img src="utils/img/github.png" class="h-[20px] w-[20px]"><span>Mon Code</span>
+        </button>
+    </a>
+    <a target="_blank" href="https://linkedin.com/in/romain-iohner-b0400a327">
+        <button class="theme-transition-ready flex items-center gap-2 px-4 py-2 bg-[#0288d1] hover:bg-[#0074c0] text-white rounded-lg cursor-pointer rounded">
+            <img src="utils/img/linkedin.png" class="h-[30px] w-[30px] mb-[-10px] mt-[-7px] ml-[-5px]"><span>LinkedIn</span>
+        </button>
+    </a>
+</div>
+<section class="mx-auto pt-[35px]">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-[25px] font-bold theme-transition-ready text-gray-900 dark:text-white mb-6" id="Projets">Mes Projets</h2>
+            <p class="text-xl theme-transition-ready text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">Différents projets réalisés, dans le cadre scolaire et en dehors.</p>
+        </div>
+    </div>
+</section>
+<div class="max-w-3xl mx-auto p-4" id="element">
+    <div class="space-y-4">
+        <details class="theme-transition-ready bg-white dark:bg-gray-800 rounded-lg" open="">
+            <summary class="px-4 py-3 cursor-pointer theme-transition-ready text-gray-800 dark:text-white font-medium">Site e-commerce
+                <a class="text-[#4500bc] hover:text-[#8a00a3] visited:text-[#6200a3]" target="_blank" href="/siteecommerce/index.php">Meub'Ebeniste<img class="h-[20px] w-[20px] inline" src="utils/img/icone.png"></a>
+            </summary>
+            <div class="px-4 py-3 theme-transition-ready text-gray-600 dark:text-gray-300 border-t border-gray-200 dark:border-gray-700">
+                Réalisé durant les deux années du BTS SIO, en cours en suivant un cahier des charge évolutif.
+            </div>
+        </details>
+        <details class="theme-transition-ready bg-white dark:bg-gray-800 rounded-lg" open="">
+            <summary class="px-4 py-3 cursor-pointer theme-transition-ready text-gray-800 dark:text-white font-medium">Site gestion de stage
+                <a class="text-[#4500bc] hover:text-[#8a00a3] visited:text-[#6200a3]" target="_blank" href="/Challenge2/index.html">Stage Hunt<img class="h-[20px] w-[20px] inline" src="utils/img/loupe.png"></a>
+            </summary>
+            <div class="px-4 py-3 theme-transition-ready text-gray-600 dark:text-gray-300 border-t border-gray-200 dark:border-gray-700">
+                Réalisé pendant la période de challenge de la 1 ère année.
+            </div>
+        </details>
+    </div>
+</div>
+<section class="mx-auto pt-[35px]">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-[25px] font-bold theme-transition-ready text-gray-900 dark:text-white mb-6" id="Exercices">Exercices</h2>
+            <p class="text-xl theme-transition-ready text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">Voici les exercices que j'ai pu réaliser dans le cadre scolaire.</p>
+        </div>
+    </div>
+</section>
+<div class="max-w-3xl mx-auto p-4" id="FAQ Simple">
+    <div class="space-y-4">
+        <details class="theme-transition-ready bg-white dark:bg-gray-800 rounded-lg" open="">
+            <summary class="px-4 py-3 cursor-pointer theme-transition-ready text-gray-800 dark:text-white font-medium">Initiation php
+                <a class="text-[#4500bc] hover:text-[#8a00a3] visited:text-[#6200a3]" target="_blank" href="/exercices/php/index.php">gestion pizzeria</a>
+            </summary>
+            <div class="px-4 py-3 theme-transition-ready text-gray-600 dark:text-gray-300 border-t border-gray-200 dark:border-gray-700">
+                Exercice d'initiation au langage php</div>
+        </details>
+        <details class="theme-transition-ready bg-white dark:bg-gray-800 rounded-lg" open="">
+            <summary class="px-4 py-3 cursor-pointer theme-transition-ready text-gray-800 dark:text-white font-medium">Installation
+                <a class="text-[#4500bc] hover:text-[#8a00a3] visited:text-[#6200a3]" target="_blank" href="https://www.iohner.sio-chopin.fr/wp">WordPress</a>
+            </summary>
+            <div class="px-4 py-3 theme-transition-ready text-gray-600 dark:text-gray-300 border-t border-gray-200 dark:border-gray-700">
+                Exercice pour s'entrainer sur l'installation du CMS WordPress</div>
+        </details>
+    </div>
+</div>
+<section class="mx-auto pt-[35px]">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-[25px] font-bold theme-transition-ready text-gray-900 dark:text-white mb-6" id="Certifications">Certfications</h2>
+            <p class="text-xl theme-transition-ready text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">Voici mes attestations Pix
+            <a class="text-[#4500bc] hover:text-[#8a00a3] visited:text-[#6200a3]" target="_blank" href="utils/documents/pix2022.pdf">2022</a> &
+            <a class="text-[#4500bc] hover:text-[#8a00a3] visited:text-[#6200a3]" target="_blank" href="utils/documents/pix2025.pdf">2025</a></p>
+            <p class="text-xl theme-transition-ready text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">Voici mes
+            <a class="text-[#4500bc] hover:text-[#8a00a3] visited:text-[#6200a3]" target="_blank" href="https://openbadgepassport.com/app/profile/280182">open badges numériques</a></p>
+        </div>
+    </div>
+</section>
+<footer class="theme-transition-ready bg-gray-100 dark:bg-gray-800 p-6 sm:p-8 w-full" id="Pied de Page avec Liens">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-1 text-center sm:text-left">
+            <div>
+                <h4 class="font-bold mb-4 theme-transition-ready text-gray-800 dark:text-white text-base sm:text-lg">Liens Rapides</h4>
+                <ul class="space-y-1">
+                    <li><a href="#" class="theme-transition-ready text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 text-sm sm:text-base cursor-pointer rounded">Accueil</a></li>
+                    <li><a href="#Projets" class="theme-transition-ready text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 text-sm sm:text-base cursor-pointer rounded">Projets</a></li>
+                    <li><a href="#Exercices" class="theme-transition-ready text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 text-sm sm:text-base cursor-pointer rounded">Exercices</a></li>
+                    <li><a href="#Certifications" class="theme-transition-ready text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 text-sm sm:text-base cursor-pointer rounded">Certifications</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4 theme-transition-ready text-gray-800 dark:text-white text-base sm:text-lg">Sites des camarades</h4>
+                <ul class="space-y-1">
+                    <li><a href="https://amalou.sio-chopin.fr/" target="_blank" class="text-[#4500bc] hover:text-[#8a00a3] visited:text-[#6200a3]">Lounes Amalou</a></li>
+                    <li><a href="https://azirari.sio-chopin.fr/" target="_blank" class="text-[#4500bc] hover:text-[#8a00a3] visited:text-[#6200a3]">Fayanlah-Fanley Azirari</a></li>
+                    <li><a href="https://basile.sio-chopin.fr/" target="_blank" class="text-[#4500bc] hover:text-[#8a00a3] visited:text-[#6200a3]">Enzo Basile</a></li>
+                    <li><a href="https://caliskan.sio-chopin.fr/" target="_blank" class="text-[#4500bc] hover:text-[#8a00a3] visited:text-[#6200a3]">Alperen Caliskan</a></li>
+                </ul>
+            </div>
+            <div class="pt-[25px] pl-[-50]">
+                <h4 class="font-bold mb-4 theme-transition-ready text-gray-800 dark:text-white text-base sm:text-lg"></h4>
+                <ul class="space-y-1">
+                    <li><a href="https://cremades.sio-chopin.fr/" target="_blank" class="text-[#4500bc] hover:text-[#8a00a3] visited:text-[#6200a3]">Kylian Cremades</a></li>
+                    <li><a href="https://curci.sio-chopin.fr/" target="_blank" class="text-[#4500bc] hover:text-[#8a00a3] visited:text-[#6200a3]">Tommas Curci</a></li>
+                    <li><a href="https://dartois.sio-chopin.fr/" target="_blank" class="text-[#4500bc] hover:text-[#8a00a3] visited:text-[#6200a3]">Owenn Dartois</a></li>
+                    <li><a href="https://gama.sio-chopin.fr/" target="_blank" class="text-[#4500bc] hover:text-[#8a00a3] visited:text-[#6200a3]">Sora Gama</a></li>
+                </ul>
+            </div>
+            <div class="pt-[25px] pl-[-50]">
+                <h4 class="font-bold mb-4 theme-transition-ready text-gray-800 dark:text-white text-base sm:text-lg"></h4>
+                <ul class="space-y-1">
+                    <li><a href="https://hmem.sio-chopin.fr/" target="_blank" class="text-[#4500bc] hover:text-[#8a00a3] visited:text-[#6200a3]">Wiem Hmem</a></li>
+                    <li><a href="https://rodriguez.sio-chopin.fr/" target="_blank" class="text-[#4500bc] hover:text-[#8a00a3] visited:text-[#6200a3]">Yoan Rodriguez-Ayuso</a></li>
+                    <li><a href="https://royer.sio-chopin.fr/" target="_blank" class="text-[#4500bc] hover:text-[#8a00a3] visited:text-[#6200a3]">Timothé Royer</a></li>
+                    <li><a href="https://winter.sio-chopin.fr/" target="_blank" class="text-[#4500bc] hover:text-[#8a00a3] visited:text-[#6200a3]">Pauline Winter</a></li>
+                </ul>
+            </div>
+            <div class="col-span-2">
+                <h4 class="font-bold mb-4 theme-transition-ready text-gray-800 dark:text-white text-base sm:text-lg">IOHNER Romain 2025 Tout Droits Reservés</h4>
+                <div class="flex justify-center sm:justify-start space-x-4">
+                    <ul class="space-y-1">
+                        <li>Site E5 Version 0.9</li>
+                        <li>Développé sur PhpStorm</li>
+                        <li>Avec le framework Tailwind CSS</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Bouton de basculement du thème -->
+<button onclick="toggleTheme()" class="fixed bottom-4 right-4 p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path class="dark:hidden" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+        <path class="hidden dark:inline-flex" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+    </svg>
+</button>
 </body>
 </html>

@@ -117,7 +117,7 @@
                         $i++;
                     }
                     $listeAchat .= "</select>";
-                    print "<td id='col8'>".$listeAchat."<input type='image' id='boutonAjoutPannier' src='/img/icone.png' height=17 witdh=17></td>";
+                    print "<td id='col8'>".$listeAchat. "<input type='image' id='boutonAjoutPannier' src='/utils/img/icone.png' height=17 witdh=17></td>";
                     print "<input type='hidden' name='produit' value='".$row."'>";
                     print "</tr>";
                     print "</form>";

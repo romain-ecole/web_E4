@@ -14,13 +14,18 @@
 
     if ($connexion->connect_error) {
         die("Échec de la connexion : ".$connexion->connect_error);
+        var_dump($connexion->connect_error);
         $exit = false;
     }
 
     $results = mysqli_query($connexion,'SELECT `PRODSTOCK` FROM `PRODUITS` WHERE `PRODNUM` = '.$_POST["produit"].';');
     $result = mysqli_fetch_all($results, MYSQLI_ASSOC);
     //<DEBUG>
+    echo("POST : ");
+    var_dump($_POST);
+    echo("produit a ajouter en stock : ");
     var_dump($result);
+    echo("qte de produit a ajouter : ");
     var_dump($result[0]['PRODSTOCK'],$_POST['Qte'.($_POST['produit'])]);
     //</DEBUG>
     mysqli_query($connexion, 'UPDATE `PRODUITS` SET `PRODSTOCK` = '.($result[0]['PRODSTOCK'] - $_POST['Qte'.($_POST['produit'])]).' WHERE `PRODNUM` = '.$_POST['produit']);
@@ -33,17 +38,14 @@
         }
         if (isset($_POST['Qte'.$key]))
         {
-            $_SESSION['panier'][$key] = $_SESSION['panier'][$key] + $_POST['Qte'.$key];
+            $_SESSION['panier'][$key] = $_SESSION['panier'][$key] + $_POST['Qte'.($_POST['produit'])];
         }
-    } 
-    //<DEBUG>
-    var_dump($_SESSION['panier'][$key]);
+    }
 
-//</DEBUG>
     print "<form action='' method='POST'><input type='hidden' name='add' value='".$_POST['produit']."'><input type='hidden' name='addQte' value='".$_POST['Qte'.($_POST['produit'])]."'></form>";
 
     if ($exit) {
-        //header('Location: ../tableauProduits.php');
+        header('Location: ../tableauProduits.php');
         exit;
     }
 ?>

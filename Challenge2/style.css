@@ -1,0 +1,210 @@
+/* Réinitialisation des marges et paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corps du site */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5e7c8;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Styles pour l'en-tête */
+header {
+    background-color: #b88b56;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1, header h2 {
+    margin-bottom: 10px;
+}
+
+/* Section principale */
+main {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Styles pour la section des cartes (boutons) */
+.cards {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 800px;
+    margin-top: 40px;
+    flex-wrap: wrap; /* Pour gérer les petites résolutions */
+}
+
+.card {
+    background-color: #a56c42;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    background-color: #925a32;
+}
+
+.card img {
+    max-width: 80px;
+    margin-bottom: 15px;
+}
+
+/* Formulaire de connexion et inscription */
+.login-section, .signup-section {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+input, select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    width: 100%;
+}
+
+input[type="submit"] {
+    background-color: #1a73e8;
+    color: white;
+    cursor: pointer;
+    border: none;
+    padding: 10px;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #1558b8;
+}
+
+/* Lien d'inscription */
+.signup-link, .login-link {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.signup-link a, .login-link a {
+    color: #1a73e8;
+    text-decoration: none;
+}
+
+.signup-link a:hover, .login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Styles pour les tableaux */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th, table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+}
+
+table th {
+    background-color: #a56c42;
+    color: white;
+}
+
+table tr:hover {
+    background-color: #f2f2f2;
+}
+
+/* Boutons généraux */
+button {
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 10px 0;
+}
+
+button:hover {
+    background-color: #1558b8;
+}
+
+/* Styles pour le pied de page */
+footer {
+    background-color: #b88b56;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsiveness pour les écrans plus petits */
+@media (max-width: 768px) {
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    header, footer {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-section, .signup-section {
+        padding: 20px;
+        max-width: 90%;
+    }
+}

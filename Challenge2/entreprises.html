@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entreprises - Stage Hunt</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <?php include 'includes/navbar.php'; ?>
+
+    <main>
+        <h2>Publier une nouvelle offre de stage</h2>
+        <form method="POST" action="create_offer.php">
+            <label for="org-name">Nom de l'organisation</label>
+            <input type="text" id="org-name" name="org-name" required>
+
+            <label for="description">Descriptif du stage</label>
+            <textarea id="description" name="description" required></textarea>
+
+            <label for="skills">Compétences requises</label>
+            <input type="text" id="skills" name="skills" placeholder="Ex : PHP, JavaScript, etc." required>
+
+            <label for="location">Lieu du stage</label>
+            <input type="text" id="location" name="location" required>
+
+            <label for="contact-email">Email de contact</label>
+            <input type="email" id="contact-email" name="contact-email" required>
+
+            <input type="submit" value="Publier l'offre">
+        </form>
+    </main>
+
+    <?php include 'includes/footer.php'; ?>
+</body>
+</html>

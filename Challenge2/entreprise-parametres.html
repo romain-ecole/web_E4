@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage Hunt - Paramètres Entreprise</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Paramètres du compte entreprise</h1>
+    </header>
+
+    <main>
+        <section class="settings-section">
+            <h2>Informations de l'entreprise</h2>
+            <form action="update-info.php" method="POST">
+                <label for="company-name">Nom de l'entreprise :</label>
+                <input type="text" id="company-name" name="company_name" value="Nom de votre entreprise">
+
+                <label for="company-email">Email de contact :</label>
+                <input type="email" id="company-email" name="company_email" value="contact@entreprise.com">
+
+                <label for="company-phone">Numéro de téléphone :</label>
+                <input type="text" id="company-phone" name="company_phone" value="01 23 45 67 89">
+
+                <label for="company-address">Adresse :</label>
+                <textarea id="company-address" name="company_address">Adresse de l'entreprise</textarea>
+
+                <input type="submit" value="Mettre à jour les informations">
+            </form>
+        </section>
+
+        <section class="settings-section">
+            <h2>Modifier le mot de passe</h2>
+            <form action="update-password.php" method="POST">
+                <label for="current-password">Mot de passe actuel :</label>
+                <input type="password" id="current-password" name="current_password" required>
+
+                <label for="new-password">Nouveau mot de passe :</label>
+                <input type="password" id="new-password" name="new_password" required>
+
+                <label for="confirm-password">Confirmer le nouveau mot de passe :</label>
+                <input type="password" id="confirm-password" name="confirm_password" required>
+
+                <input type="submit" value="Changer le mot de passe">
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Stage Hunt. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

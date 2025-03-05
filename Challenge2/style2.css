@@ -1,0 +1,124 @@
+/* Réinitialisation des marges et paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corps du site */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5e7c8; /* Couleur de fond claire */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* En-tête */
+header {
+    background-color: #b88b56; /* Même couleur que l'en-tête du reste du site */
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin-bottom: 20px;
+}
+
+/* Menu de navigation */
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #1a73e8; /* Même couleur que les liens du reste du site */
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #1558b8;
+}
+
+/* Sections de gestion */
+main {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+section {
+    background-color: #fff;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+}
+
+h2 {
+    color: #b88b56;
+    margin-bottom: 15px;
+}
+
+/* Boutons d'action */
+.admin-actions a {
+    display: inline-block;
+    background-color: #a56c42; /* Couleur similaire aux cartes */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 10px 0;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.admin-actions a:hover {
+    background-color: #925a32;
+}
+
+/* Pied de page */
+footer {
+    background-color: #b88b56;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsiveness pour les petits écrans */
+@media (max-width: 768px) {
+    section {
+        padding: 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+}

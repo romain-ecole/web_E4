@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage Hunt - Inscription</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function showForm() {
+            var role = document.getElementById("role").value;
+            var forms = document.getElementsByClassName("form-role");
+            for (var i = 0; i < forms.length; i++) {
+                forms[i].style.display = "none";
+            }
+            if (role) {
+                document.getElementById(role + "-form").style.display = "block";
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Inscription sur Stage Hunt</h1>
+        <h2>Choisissez votre rôle pour créer un compte</h2>
+    </header>
+
+    <main>
+        <section class="signup-section">
+            <!-- Formulaire pour sélectionner le rôle -->
+            <form>
+                <label for="role">Choisissez votre rôle :</label>
+                <select name="role" id="role" onchange="showForm()">
+                    <option value="">-- Sélectionnez un rôle --</option>
+                    <option value="eleve">Élève</option>
+                    <option value="professeur">Professeur</option>
+                    <option value="entreprise">Entreprise</option>
+                </select>
+            </form>
+
+            <!-- Formulaire pour les élèves -->
+            <form id="eleve-form" class="form-role" style="display:none;" action="inscription.php" method="POST">
+                <h3>Inscription Élève</h3>
+                <input type="hidden" id="role" name="role" value="eleve"> <!-- Champ caché pour le rôle -->
+                
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" name="nom" required>
+
+                <label for="prenom">Prénom :</label>
+                <input type="text" id="prenom" name="prenom" required>
+
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="classe">Classe :</label>
+                <select name="classe" id="classe">
+                    <option value="SIO 1">SIO 1</option>
+                    <option value="SIO 2">SIO 2</option>
+                </select>
+
+                <label for="password">Mot de passe :</label>
+                <input type="password" id="password" name="password" required>
+
+                <input type="submit" value="S'inscrire">
+            </form>
+
+            <!-- Formulaire pour les professeurs -->
+            <form id="professeur-form" class="form-role" style="display:none;" action="inscription.php" method="POST">
+                <h3>Inscription Professeur</h3>
+                <input type="hidden" name="role" value="professeur"> <!-- Champ caché pour le rôle -->
+
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" name="nom" required>
+
+                <label for="prenom">Prénom :</label>
+                <input type="text" id="prenom" name="prenom" required>
+
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="classe">Classe :</label>
+                <select name="classe" id="classe">
+                    <option value="SIO 1">SIO 1</option>
+                    <option value="SIO 2">SIO 2</option>
+                    <option value="SIO All">SIO 1 et SIO 2</option>
+                </select>
+
+                <label for="password">Mot de passe :</label>
+                <input type="password" id="password" name="password" required>
+
+                <input type="submit" value="S'inscrire">
+            </form>
+
+            <!-- Formulaire pour les entreprises -->
+            <form id="entreprise-form" class="form-role" style="display:none;" action="inscription.php" method="POST" enctype="multipart/form-data">
+                <h3>Inscription Entreprise</h3>
+                <input type="hidden" name="role" value="entreprise"> <!-- Champ caché pour le rôle -->
+
+                <label for="orga">Nom de l'organisation :</label>
+                <input type="text" id="orga" name="orga" required>
+
+                <label for="email">Email de l'organisation :</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="tel">Téléphone de l'organisation :</label>
+                <input type="tel" id="tel" name="tel" required>
+
+                <label for="logo">Logo de l'organisation :</label>
+                <input type="file" id="logo" name="logo" accept="image/*" required>
+
+                <label for="siteweb">Site web de l'organisation :</label>
+                <input type="url" id="siteweb" name="siteweb">
+                
+                <label for="nom">Nom du réferent</label>
+                <input type="text" id="nom" name="nom">
+                
+                <label for="prenom">Prénom du réferent</label>
+                <input type="text" id="prenom" name="prenom">
+                
+                <label for="mail">Email du réferent (utilisé comme identifiant de connexion)</label>
+                <input type="email" id="mail" name="mail">
+
+                <label for="password">Mot de passe :</label>
+                <input type="password" id="password" name="password" required>
+
+                <input type="submit" value="S'inscrire">
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Stage Hunt. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
+
+

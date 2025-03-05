@@ -33,6 +33,7 @@
         <?= GenHeader()?>
         <?php
         //<DEBUG>
+        echo("panier : ");
         var_dump($_SESSION['panier']);
         //</DEBUG>
         foreach($_SESSION['panier'] as $key)
@@ -46,6 +47,7 @@
             }
         }
         //<DEBUG>
+        echo("tableauRempli : ");
         var_dump($tableauRempli);
         //</DEBUG>
         if ($tableauRempli && $connexion)
@@ -69,45 +71,45 @@
                 <td id="lignehaut">Quantité achetée</td>
                 <td id="lignehaut">Prix total</td>
             </tr>
-        <?php
-            foreach($_SESSION['panier'] as $key)
-            {
-                $listeAchat = "";
-                if ($_SESSION['panier'][$key] != 0)
+            <?php
+                foreach($_SESSION['panier'] as $key)
                 {
-                    $requete = mysqli_query($connexion, 'SELECT * FROM `PRODUITS` WHERE `PRODNUM` = '.$key.';');
-                    $results = mysqli_fetch_all($requete, MYSQLI_ASSOC);
-
-                    print "<form action='scripts/retirerPanier.php' id='leForm".$key."' method='post'>";
-                    print "<tr id='ligneCoul".($key+1) % 2 ."'>";
-                    print "<td id='col1'> <img src='img/".$key.".png' height=100 witdh=100> </td>";
-                    print "<td id='col2'>".$key."</td>";
-                    print "<td id='col3'>".mb_convert_encoding($results['PRODNOM'], 'UTF-8', mb_list_encodings())."</td>";
-                    print "<td id='col4'>".$results['PRODPOID']."Kg</td>";
-                    print "<td id='col5'>".$results['PRODDIM']."</td>";
-                    print "<td id='col6'>".$results['PRODCOUT']."€</td>";
-                    $listeAchat = "<select name='Qte".$key."' id='Qte".$key."'>";
-                    $listeAchat .= "<option value='1' selected>1</option>";
-                    $k = 2;
-                    while($k <= $_SESSION['panier'][$key])
+                    $listeAchat = "";
+                    if ($_SESSION['panier'][$key] != 0)
                     {
-                        $listeAchat .= "<option value='" . $k . "'>" . $k . "</option>";
-                        $k++;
+                        $requete = mysqli_query($connexion, 'SELECT * FROM `PRODUITS` WHERE `PRODNUM` = '.$key.';');
+                        $results = mysqli_fetch_all($requete, MYSQLI_ASSOC);
+
+                        print "<form action='scripts/retirerPanier.php' id='leForm".$key."' method='post'>";
+                        print "<tr id='ligneCoul".($key+1) % 2 ."'>";
+                        print "<td id='col1'> <img src='img/".$key.".png' height=100 witdh=100> </td>";
+                        print "<td id='col2'>".$key."</td>";
+                        print "<td id='col3'>".mb_convert_encoding($results['PRODNOM'], 'UTF-8', mb_list_encodings())."</td>";
+                        print "<td id='col4'>".$results['PRODPOID']."Kg</td>";
+                        print "<td id='col5'>".$results['PRODDIM']."</td>";
+                        print "<td id='col6'>".$results['PRODCOUT']."€</td>";
+                        $listeAchat = "<select name='Qte".$key."' id='Qte".$key."'>";
+                        $listeAchat .= "<option value='1' selected>1</option>";
+                        $k = 2;
+                        while($k <= $_SESSION['panier'][$key])
+                        {
+                            $listeAchat .= "<option value='" . $k . "'>" . $k . "</option>";
+                            $k++;
+                        }
+                        $listeAchat .= "</select>";
+                        print "<td id='col7'>".$_SESSION['panier'][$key]."<br>".$listeAchat." height=17 witdh=17></td>";
+                        print "<td id='col8'>".$results['PRODCOUT'] * $_SESSION['panier'][$key]."€ </td>";
+                        $acc += $results['PRODCOUT'] * $_SESSION['panier'][$key];
+                        print "</tr>";
+                        print "<input type='hidden' name='prod' value='".$key."'>";
+                        print "</form>";
                     }
-                    $listeAchat .= "</select>";
-                    print "<td id='col7'>".$_SESSION['panier'][$key]."<br>".$listeAchat." height=17 witdh=17></td>";
-                    print "<td id='col8'>".$results['PRODCOUT'] * $_SESSION['panier'][$key]."€ </td>";
-                    $acc += $results['PRODCOUT'] * $_SESSION['panier'][$key];
-                    print "</tr>";
-                    print "<input type='hidden' name='prod' value='".$key."'>";
-                    print "</form>";
                 }
-            }
-            $acc2 = (int)(($acc * 1.2)/1.01);
-            print "<tr id='ligneCoul".$key % 2 ."'>";
-            print "<td colspan='7'> Prix total de la commande TTC </td>";
-            print "<td id='col9'> $acc2 €</td>";
-        ?>
+                $acc2 = (int)(($acc * 1.2)/1.01);
+                print "<tr id='ligneCoul".$key % 2 ."'>";
+                print "<td colspan='7'> Prix total de la commande TTC </td>";
+                print "<td id='col9'> $acc2 €</td>";
+            ?>
             </tr>
         </table><br>
         <form action ="scripts/sessionExit.php" id="leForm" method="POST">
@@ -118,7 +120,8 @@
         <?php
         } else {
             print "Le panier est vide.";
-        } ?>
+        }
+        ?>
         <?= GenFooter()?>
     </body>
 </html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publier une Offre de Stage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Publier une Offre de Stage</h1>
+    </header>
+
+    <main>
+        <section class="form-section">
+            <h2>Détails de l'offre de stage</h2>
+            <form action="enterprise-publier-offre.php" method="POST">
+                <!-- Nom de l'organisation -->
+                <label for="organisation">Nom de l'organisation *</label>
+                <input type="text" id="organisation" name="organisation" required>
+
+                <!-- Descriptif du stage -->
+                <label for="description">Descriptif du stage *</label>
+                <textarea id="description" name="description" rows="5" required></textarea>
+
+                <!-- Nombre de stagiaires souhaités -->
+                <label for="nb-stagiaires">Nombre de stagiaires souhaités *</label>
+                <input type="number" id="nb-stagiaires" name="nb-stagiaires" value="1" required>
+
+                <!-- Type de stage -->
+                <label for="type-stage">Type de stage *</label>
+                <select id="type-stage" name="type-stage" required>
+                    <option value="developpement">Développement</option>
+                    <option value="reseaux">Réseaux/Système</option>
+                </select>
+
+                <!-- Compétences requises -->
+                <label for="competences">Compétences requises (mots-clés) *</label>
+                <input type="text" id="competences" name="competences" placeholder="Ex: PHP, JavaScript, SQL" required>
+
+                <!-- Lieu du stage -->
+                <label for="lieu">Lieu du stage *</label>
+                <input type="text" id="lieu" name="lieu" required>
+
+                <!-- Durée du stage -->
+                <label for="duree">Durée du stage (en semaines) *</label>
+                <input type="number" id="duree" name="duree" required>
+
+                <!-- Contact mail -->
+                <label for="contact-mail">Email de contact *</label>
+                <input type="email" id="contact-mail" name="contact-mail" required>
+
+                <!-- Contact téléphone -->
+                <label for="contact-tel">Téléphone de contact</label>
+                <input type="tel" id="contact-tel" name="contact-tel">
+
+                <!-- Bouton de soumission -->
+                <input type="submit" value="Publier l'offre">
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Stage Hunt. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
