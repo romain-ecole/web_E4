@@ -1,4 +1,8 @@
 <?php
+
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
 session_start();
 include 'config.php';
 $title = 'Profil';
@@ -20,14 +24,14 @@ if(isset($_POST['envoyer'])){
         mkdir($dossier);
     }
 
-    $fichier = basename($_FILES['avatar']['name']);
+    $fichier = basename($_FILES['avatar']['name'], 'png');
   
     if(file_exists("upload/" . $_SESSION['id'] . '/' . $data['AVATAR']) && isset($_SESSION['AVATAR'])){
         unlink("upload/" . $_SESSION['id'] . '/' . $data['AVATAR']);
     }
 
     if(move_uploaded_file($_FILES['avatar']['tmp_name'], $dossier . $fichier)){
-        $req = $bdd->prepare("UPDATE ETUDIANT SET AVATAR = ? WHERE IDENTIFIANT_ETUD = ?");
+        $req = $bdd->prepare("UPDATE etudiant SET AVATAR = ? WHERE IDENTIFIANT_ETUD = ?");
         $req->execute([$fichier, $_SESSION['id']]);
         $_SESSION['AVATAR'] = $fichier;
         $success = '<div class="alert alert-success text-center" id="success"><p>Upload effectué avec succès !</p></div>';
@@ -120,7 +124,7 @@ include 'elements/header.php';
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Changer mon mot de passe</h5>
+                    <h5 class="modal-title">Contacter un administrateur</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
