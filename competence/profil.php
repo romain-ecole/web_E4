@@ -130,7 +130,7 @@ include 'elements/header.php';
                         </button>
                         </div>
                         <div class="modal-body">
-                            <form action="mail_traitement.php" method="POST">
+                            <form action="function/mail_traitement.php" method="POST">
                                 <label for='object'>Objet de votre demande :</label>
                                 <input type="text" id="object" name="object" class="form-control" required/>
                                 <br />

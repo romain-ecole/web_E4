@@ -1,5 +1,16 @@
 <?php
+
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
 include 'config.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require __DIR__ . '/PHPMailer-master/src/Exception.php';
+require __DIR__ . '/PHPMailer-master/src/PHPMailer.php';
+require __DIR__ . '/PHPMailer-master/src/SMTP.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,20 +46,26 @@ include 'config.php';
 
 <?php
 // Envoie du mail de réinitialisation du mot de passe avec token
-if (isset($_POST['email']))
-{
-  $token = uniqid();
-  $url = "https://asci16.sms-formation.fr/competence/token?token=$token";
-  $message = "Bonjour, voici votre lien pour la récupération du mot de passe : $url";
-  $headers = 'Content-Type: text/plain; charset="utf-8"'." ";
+if (isset($_POST['email'])) {
+    $token = uniqid();
+    $url = "https://iohner.sio-chopin.fr/competence/token?token=$token";
+    $message = "Bonjour, voici votre lien pour la récupération du mot de passe : $url";
+    $mail = new PHPMailer(true);
 
-  if (mail($_POST['email'], 'Demande de réinitialisation du mot de passe', $message, $headers))
-  {
-      $sql = "UPDATE etudiant SET TOKEN = ? WHERE EMAIL_ETUD = ?";
-      $stmt = $bdd->prepare($sql);
-      $stmt->execute([$token, $_POST['email']]);
-      echo 'Mail envoyé';
-  }else{
-      echo "Une erreur est survenue, veuillez contacter un administrateur.";
-  }
+    try {
+        $mail->setFrom('romain.iohner@iohner.sio-chopin.fr', 'Admin');
+        $mail->addAddress($_POST['email']);
+        $mail->isHTML(true); // Set email format to HTML
+        $mail->Subject = 'récupération de mot de passe';
+        $mail->Body = $message;
+        $mail->send();
+
+        $sql = "UPDATE etudiant SET TOKEN = ? WHERE EMAIL_ETUD = ?";
+        $stmt = $bdd->prepare($sql);
+        $stmt->execute([$token, $_POST['email']]);
+
+        echo 'Mail envoyé';
+    } catch (Exception $e) {
+        echo "Une erreur est survenue, veuillez contacter un administrateur: {$mail->ErrorInfo}";
+    }
 }
